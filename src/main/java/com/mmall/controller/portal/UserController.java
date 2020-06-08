@@ -41,8 +41,6 @@ public class UserController {
 //            session.setAttribute(Const.CURRENT_USER,response.getData());
             //将sessionid写入cookie
             CookieUtil.writeLoginToken(httpServletResponse,session.getId());
-            CookieUtil.readLoginToken(httpServletRequest);
-            CookieUtil.delLoginToken(httpServletRequest,httpServletResponse);
             //将sessionid和user写入redis
             RedisPoolUtil.setEx(session.getId(), JsonUtil.obj2String(response.getData()), Const.RedisCacheExtime.REDIS_SESSIOIN_EXTIME);
 
