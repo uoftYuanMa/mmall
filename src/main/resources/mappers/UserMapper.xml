@@ -182,14 +182,13 @@
   </select>
 
     <select id="checkAnswer" resultType="int" parameterType="map">
-    SELECT
+    select
     count(1)
     from mmall_user
-    where username=#{username}
+    where username = #{username}
     and question = #{question}
     and answer = #{answer}
   </select>
-
     <update id="updatePasswordByUsername" parameterType="map">
     update mmall_user
     SET password = #{passwordNew},update_time = now()
