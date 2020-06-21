@@ -16,7 +16,6 @@ import com.mmall.util.DateTimeUtil;
 import com.mmall.util.PropertiesUtil;
 import com.mmall.vo.ProductDetailVo;
 import com.mmall.vo.ProductListVo;
-import net.sf.jsqlparser.schema.Server;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -92,11 +91,11 @@ public class ProductServiceImpl implements IProductService {
         }
         //vo对象，value object
         //pojo->bo->vo
-        ProductDetailVo productDetailVo = assembleProuctDetailVo(product);
+        ProductDetailVo productDetailVo = assembleProductDetailVo(product);
         return ServerResponse.createBySuccess(productDetailVo);
     }
 
-    private ProductDetailVo assembleProuctDetailVo(Product product) {
+    private ProductDetailVo assembleProductDetailVo(Product product) {
         ProductDetailVo productDetailVo = new ProductDetailVo();
         productDetailVo.setId(product.getId());
         productDetailVo.setSubtitle(product.getSubtitle());
@@ -194,7 +193,7 @@ public class ProductServiceImpl implements IProductService {
         if (product.getStatus() != Const.ProductStatusEnum.ON_SALE.getCode()) {
             return ServerResponse.createByErrorMessage("产品已经下架或者删除");
         }
-        ProductDetailVo productDetailVo = assembleProuctDetailVo(product);
+        ProductDetailVo productDetailVo = assembleProductDetailVo(product);
         return ServerResponse.createBySuccess(productDetailVo);
     }
 

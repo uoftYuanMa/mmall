@@ -68,7 +68,7 @@ public class CategoryServiceImpl implements ICategoryService {
 
     //递归查询本节点的id，以及孩子节点的id
     public ServerResponse<List<Integer>> selectCategoryAndChildrenById(Integer categoryId){
-        //Guva集合中的方法
+        //Guava集合中的方法
         Set<Category> categorySet = Sets.newHashSet();
         findChildCategory(categorySet,categoryId);
         List<Integer> categoryIdList= Lists.newArrayList();

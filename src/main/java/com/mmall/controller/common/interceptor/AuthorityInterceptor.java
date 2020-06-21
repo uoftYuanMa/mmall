@@ -19,6 +19,7 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Slf4j
 public class AuthorityInterceptor implements HandlerInterceptor {
@@ -117,4 +118,6 @@ public class AuthorityInterceptor implements HandlerInterceptor {
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
         log.info("afterCompletion");
     }
+
+ 
 }

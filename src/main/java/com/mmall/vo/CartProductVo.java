@@ -8,6 +8,7 @@ public class CartProductVo {
     private Integer userId;
     private Integer productId;
     private Integer quantity; //购物车中此商品的数量
+
     private String productName;
     private String productSubtitle;
     private String productMainImage;
